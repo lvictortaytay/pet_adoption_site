@@ -1,0 +1,12 @@
+{% extends "new-form.html" %}
+{% block title %} Your Madlib! {% endblock %}
+{% block content %}
+    <h1 class="text-center ">Your Madlib!</h1>
+    <nav class = "navbar fixed-top bg-secondary">
+        <a href="/">home</a>
+        <a href="/new-story">story page</a>
+        </nav>
+    <p class="text-center text-primary">
+        {{new_story}}
+    </p>
+{% endblock %}

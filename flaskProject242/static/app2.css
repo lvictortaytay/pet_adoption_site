@@ -1,0 +1,43 @@
+.navbar{
+    background-color: black;
+    position:fixed;
+    width: 100%;
+
+}
+h1{
+    padding-top:50px;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.navbar a:hover{
+    background-color: grey;
+}
+.madlibbutton{
+    border: white solid 3px;
+    border-radius: 10px;
+}
+.madlibbutton:hover{
+    background-color: rgb(206, 252, 206);
+    transition: .5s;
+    border: white solid 5px;
+    border-radius: 15px;
+}
+
+.input{
+    border: rgb(206, 206, 206) solid 3px;
+    border-radius: 10px;
+}
+.dropdown{
+    border: rgb(206, 206, 206) solid 3px;
+    border-radius: 10px;
+}
+.dropdown:hover{
+    transition: .2s;
+    border: rgb(205, 255, 203) solid 5px;
+    border-radius: 12px;
+
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title> {% block title %} create Madlib! {% endblock %}</title>
+</head>
+{% block content %}
+<body>
+    <h1 class="text-center">create your Madlib!</h1>
+    <nav class = "navbar fixed-top bg-secondary">
+    <a href="/">home</a>
+    <a href="/new-story">story page</a>
+    </nav>
+    <form action="/new-story" class="text-center">
+        <select name="story_id" class="dropdown">
+                <option value="{{story_id}}">{{story_id}}</option>
+            </select>
+        {% for word in story%}
+        <p> {{word}}
+        <input type="text" class="input" name={{word}} placeholder={{word}}>
+        </p>
+        {% endfor %}
+        <button class="madlibbutton">create!</button>
+    </form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "new-form.html" %}
+{% block title %} pick a story! {% endblock %}
+{% block content %}
+<h1 class="text-center">Choose your story!</h1>
+    <nav class = "navbar fixed-top bg-secondary">
+        <a href="/">home</a>
+        <a href="/new-story">story page</a>
+        </nav>
+    <form action="/new-form" class="text-center">
+        <select name="story_id" class="dropdown">
+            {% for (title,story) in story.items()%}
+                <option value="{{story.code_name}}">{{title}}</option>
+            {% endfor %}
+            </select>
+        <button class="madlibbutton">go!</button>
+    </form>
+
+{% endblock%}
