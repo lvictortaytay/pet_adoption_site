@@ -1,0 +1,26 @@
+{% extends "home.html" %}
+{% block title %} info page! {% endblock %}
+{% block content %}
+    <h1>this is the info page</h1>
+    <a href="/" class = "home-tag">home</a>
+
+<div class = "container">
+    {{pet.name}}<br>
+    {{pet.species}}<br>
+    <img src = "{{pet.photo_url}}" class = "dogimg">
+    {{pet.age}}
+</div>
+
+
+    <form class = "edit" ,  action = "/info/{{pet.id}}" , method = "POST">
+        <h3>edit pup!</h3>
+        {{form.hidden_tag()}}
+        {% for field in form if field.widget.input_type != "hidden" %}
+        <p>{{field.label}}</p>
+        <p>{{field}}</p>
+        {% endfor %}
+        <button type="submit" class = "btn btn-success">save!</button>
+
+    </form>
+{% endblock %}
+</html>

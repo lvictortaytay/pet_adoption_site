@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>{% block title %} adoption center! {% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <a href="/add">add pup!</a>
+
+    <h1 class="text-center">welcome to taylors pet adoption!</h1>
+    {% for pet in pets %}
+
+
+
+
+    <div class = "puppy_box text-center">
+
+
+    <p>{{pet.name}}</p>
+    <img src = {{pet.photo_url}}>
+    {% if pet.available == "True" %}
+    <button class = "btn btn-success">available</button>
+    {% else %}
+    <button class = "btn btn-warning">not available</button>
+    {% endif %}
+    <a href="/info/{{pet.id}}">puppy info!</a>
+    {% endfor %}
+    
+
+    </div>
+{% endblock %}
+</body>
+</html>

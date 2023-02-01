@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% block title %} add pup! {% endblock %}
+{% block content %}
+
+<h1 class = "text-center text-secondary">add a puppy!</h1>
+
+    <form action = "/add" method="POST" class = "add_pup_form">
+        {{form.hidden_tag()}}
+        {% for field in form if field.widget.input_type != "hidden" %}
+        <P>{{field.label}} {{field}}</P>
+        {% endfor %}
+        <button type = "submit" class = "btn btn-success">add pup!</button>
+    </form>
+
+
+    <a href="/" class = "home-tag">home</a>
+{% endblock %}
+</html>
